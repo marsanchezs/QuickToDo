@@ -22,4 +22,18 @@ object TaskListFactory {
             completed = RandomFactory.generateRandomBoolean()
         )
     )
+
+    fun makeTask() = Task(
+        userId = RandomFactory.generateRandomInt(),
+        id = RandomFactory.generateRandomInt(),
+        title = RandomFactory.generateRandomString(),
+        completed = RandomFactory.generateRandomBoolean()
+    )
+
+    fun makeUpdateTask() = Task(
+        userId = 1,
+        id = 1,
+        title = "Updated Task",
+        completed = true
+    )
 }
