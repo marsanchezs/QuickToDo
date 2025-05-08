@@ -36,21 +36,12 @@ class TaskListViewModel @Inject constructor(
                 _tasks.addAll(getTasksUseCase.getTasks())
                 _errorMessage.value = null
             } catch (e: Exception) {
-                _errorMessage.value = "Ocurrió un error al cargar las tareas"
-                println("Error al cargar tareas: ${e.message}")
+                _errorMessage.value = "An error occurred while loading tasks"
+                println("Error loading tasks\n: ${e.message}")
             } finally {
                 _isLoading.value = false
             }
         }
-
-
-        /*viewModelScope.launch {
-            if (_tasks.isEmpty()) {
-                _isLoading.value = true
-                _tasks.addAll(getTasksUseCase.getTasks())
-                _isLoading.value = false
-            }
-        }*/
     }
 
     fun addTask(task: Task) {
