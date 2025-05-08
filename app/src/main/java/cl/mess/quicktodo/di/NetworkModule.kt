@@ -1,6 +1,5 @@
 package cl.mess.quicktodo.di
 
-import cl.mess.quicktodo.tasklist.data.TaskListRepository
 import cl.mess.quicktodo.tasklist.data.remote.TaskListRemoteImpl
 import cl.mess.quicktodo.tasklist.data.remote.retrofit.TaskListWebService
 import cl.mess.quicktodo.tasklist.data.source.TaskListRemote
