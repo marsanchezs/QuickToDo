@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">QuickToDo</string>
+    <string name="loading">Cargando</string>
+    <string name="retry">Reintentar</string>
+    <string name="user">Usuario</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Eliminar</string>
+    <string name="confirm_deletion">Confirmar eliminación</string>
+    <string name="are_you_sure_you_want_to_delete_the_task">Estás seguro de que deseas eliminar la tarea</string>
+    <string name="yes">Si</string>
+    <string name="no">No</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="completed">Completada</string>
+    <string name="pending">Pendiente</string>
+    <string name="add_task">Agregar tarea</string>
+    <string name="edit_task">Editar tarea</string>
+    <string name="task_description">Descripción de la tarea</string>
+    <string name="the_task_cannot_be_empty">La tarea no puede estar vacía</string>
 </resources>
