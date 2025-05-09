@@ -1,5 +1,6 @@
-package cl.mess.quicktodo.tasklist.data
+package cl.mess.quicktodo.tasklist.data.repository
 
+import cl.mess.quicktodo.tasklist.data.mapper.toTasks
 import cl.mess.quicktodo.tasklist.data.remote.model.RemoteTask
 import cl.mess.quicktodo.tasklist.data.source.TaskListRemote
 import cl.mess.quicktodo.tasklist.factory.TaskListFactory.makeRemoteTasks
@@ -13,31 +14,31 @@ import kotlin.test.Test
 import kotlin.test.assertEquals
 
 @ExperimentalCoroutinesApi
-class TaskListRepositoryTest {
+class TaskListRepositoryImplTest {
 
     private val remote: TaskListRemote = mockk()
-    private lateinit var repository: TaskListRepository
+    private lateinit var repository: TaskListRepositoryImpl
 
     @Before
     fun setUp() {
-        repository = TaskListRepository(remote)
+        repository = TaskListRepositoryImpl(remote)
     }
 
     @Test
-    fun `given remote returns tasks when getTasks is called then it returns the expected list`() = runTest {
+    fun `given remote returns tasks when getTasks is called then it returns the mapped list`() = runTest {
         // Given
-        val expectedTasks = makeRemoteTasks()
-        stubRemoteGetTasks(expectedTasks)
+        val remoteTasks = makeRemoteTasks()
+        stubRemoteGetTasks(remoteTasks)
 
         // When
         val result = repository.getTasks()
 
         // Then
-        assertEquals(expectedTasks, result)
+        assertEquals(remoteTasks.toTasks(), result)
         coVerify(exactly = 1) { remote.getTasks() }
     }
 
-    private fun stubRemoteGetTasks(expected: List<RemoteTask>) {
-        coEvery { remote.getTasks() } returns expected
+    private fun stubRemoteGetTasks(tasks: List<RemoteTask>) {
+        coEvery { remote.getTasks() } returns tasks
     }
 }

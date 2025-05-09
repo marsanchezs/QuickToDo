@@ -1,7 +1,6 @@
-package cl.mess.quicktodo.tasklist.data.remote
+package cl.mess.quicktodo.tasklist.data.source
 
 import cl.mess.quicktodo.tasklist.data.remote.retrofit.TaskListWebService
-import cl.mess.quicktodo.tasklist.data.source.TaskListRemote
 import javax.inject.Inject
 
 class TaskListRemoteImpl @Inject constructor(
