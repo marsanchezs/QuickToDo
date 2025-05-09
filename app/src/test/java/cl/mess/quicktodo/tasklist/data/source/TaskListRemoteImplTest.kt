@@ -1,4 +1,4 @@
-package cl.mess.quicktodo.tasklist.data.remote
+package cl.mess.quicktodo.tasklist.data.source
 
 import cl.mess.quicktodo.tasklist.data.remote.model.RemoteTask
 import cl.mess.quicktodo.tasklist.data.remote.retrofit.TaskListWebService
